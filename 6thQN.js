@@ -21,7 +21,7 @@ var obj = {
     getFullNameV2: () => {
         return {
             fName:this.fName,
-            context:this
+            context:this //shows window in browser
         };
     },
 
@@ -31,9 +31,11 @@ var obj = {
             context:this
         };
     })(),
+    
+    getFullNameV3: [this.fName, this],
 };
 
 console.log(obj.prop.getFullName());
 console.log(obj.getFullName());
 console.log(obj.getFullNameV2());
-console.log(obj.getFullNameV3());
+console.log(obj.getFullNameV3);
