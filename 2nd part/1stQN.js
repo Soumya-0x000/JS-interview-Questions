@@ -1,10 +1,13 @@
-function create() {
-    var obj = Object.create({
-        fName: 'Soumya',
-        mName: 'Sankar',
-        lName: 'Das',
-        fullName: function () {
-            return `${this.fName} ${this.mName} ${this.lName}`
-        }
-    })
+function SSD() {
+    console.log('SSD')
 }
+
+setTimeout(() => {
+    console.log('B')
+}, 2000);
+
+SSD()
+
+console.log('C')
+
+Promise.resolve().then(() => console.log('D'))
