@@ -3,18 +3,24 @@ function SSD() {
 }
 
 async function createData() {
-    let status = undefined
     try {
         const res = await fetch('https://api.github.com/users/Soumya-0x000')
-        status = res.status
+        return res.status
     } catch (error) {
         console.error('error')
+        return undefined
     }
-    return status
 }  //Micro task queue has high priority
 
 setTimeout(() => {
-    console.log('B')
+    console.log('\n')
+    console.log(!undefined)
+    console.log(Boolean(undefined))
+    console.log(typeof(undefined))
+    console.log(Boolean(null))
+    console.log(typeof(null))
+    console.log(typeof(Symbol('object')))
+    console.log(typeof(234567890123456789012345678901234567890))
 }, 1000);    //callback queue / task queue has low priority
 
 SSD()
