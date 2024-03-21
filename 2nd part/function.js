@@ -2,59 +2,59 @@
 // // functions can be stored in variables, can be passed as arguments to other functions and returned from them.
 // // functions can be hoisted to the top level of a program
 
-// function sqr(val) {
-//     return val*val;
-// }
+function sqr(val) {
+    return val*val;
+}
 
-// (function (fn, val) {
-//     console.log(`Square of ${val} is ${fn(val)} `)
-// })(sqr, 7);
-
-
-// // for(let i = 0; i < 6; i ++) {
-// //     setTimeout(function() {
-// //         console.log(i)
-// //     }, i * 1000)
-// // }
+(function (fn, val) {
+    console.log(`Square of ${val} is ${fn(val)} `)
+})(sqr, 7);
 
 
-// (() => {
-//     var coo = 400;
-//     (() => {
-//         console.log(coo)        //undefined
-//         var coo = 450
-//     })()
-//     console.log(coo);           //400
-// })()
-// console.log(coo);               //undefined
-// {
-//     var coo = 500;
-// }
-// console.log(coo)                //500
+for(let i = 0; i < 6; i ++) {
+    setTimeout(function() {
+        console.log(i)
+    }, i * 1000)
+}
 
-// lord = 'giridhari'
-// function greet(lord){
-//     console.log(`\nSupreme lord ${lord}`)
-//     console.log(`Supreme lord ${this.lord}\n`)
-// }
 
-// function doSomething(callback) {
-//     nam = 'Vishnu'
-//     callback(nam)
-// }
-// doSomething(greet)
+(() => {
+    var coo = 400;
+    (() => {
+        console.log(coo)        //undefined
+        var coo = 450
+    })()
+    console.log(coo);           //400
+})()
+console.log(coo);               //undefined
+{
+    var coo = 500;
+}
+console.log(coo)                //500
 
-// const testObj = {
-//     name: 'buddy',
-//     printName1: () => {
-//         console.log(`Hello ${this.name}`)
-//     },
-//     printName2() {
-//         console.log(`Hello ${this.name}`)
-//     }
-// };
-// testObj.printName1();
-// testObj.printName2();
+lord = 'giridhari'
+function greet(lord){
+    console.log(`\nSupreme lord ${lord}`)
+    console.log(`Supreme lord ${this.lord}\n`)
+}
+
+function doSomething(callback) {
+    nam = 'Vishnu'
+    callback(nam)
+}
+doSomething(greet)
+
+const testObj = {
+    name: 'buddy',
+    printName1: () => {
+        console.log(`Hello ${this.name}`)
+    },
+    printName2() {
+        console.log(`Hello ${this.name}`)
+    }
+};
+testObj.printName1();
+testObj.printName2();
 
 nam = 'Somu';
 
@@ -100,3 +100,4 @@ const callFunc = outerFunc()
 callFunc()
 console.log('\nOuter end:_______________' + this.nam + '\n')
 outerFunc()();
+console.log('\nAnother outer end:_______________' + this.nam + '\n')
